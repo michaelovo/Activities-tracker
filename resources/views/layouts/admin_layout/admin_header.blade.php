@@ -1,10 +1,10 @@
 <!--Header-part-->
 <div id="header">
-  <h1><a href="/admin/dashboard">Matrix Admin</a></h1>
+  <h1><a href="/admin/dashboard">Tracker Panel</a></h1>
 </div>
 <!--close-Header-part-->
 
-
+{{-- 
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
@@ -45,3 +45,4 @@
   <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
 </div>
 <!--close-top-serch-->
+--}}

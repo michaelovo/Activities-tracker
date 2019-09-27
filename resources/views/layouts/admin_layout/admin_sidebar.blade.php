@@ -1,35 +1,53 @@
 <!--sidebar-menu-->
-<div id="sidebar"><a href="/admin/dashboard" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+<div id="sidebar"><a href="/admin/dashboard" class="visible-phone"><i class="icon icon-home icon-5x"></i> Dashboard</a>
   <ul>
-    <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li class=""><a href="index.html"><i class="icon icon-dashboard icon-2x"></i> <span>Dashboard</span></a> </li>
+
+      <!-- Users -->
+      <li class="submenu"> <a href="#"><i class="icon icon-group icon-2x"></i> <span>Users</span>
+        <span class="label label-important">2</span></a>
+        <ul>
+          <li><a href="{{url('/admin.add-user')}}"><i class="icon icon-plus-sign icon-2x"></i>Add User</a></li>
+          <li><a href="{{url('/admin.view-users')}}"><i class="icon icon-eye-open icon-2x"></i>View Users</a></li>
+        </ul>
+      </li>
    
-    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i>
+      <!-- Categories -->
+    <li class="submenu"> <a href="#"><i class="icon icon-th-list icon-2x"></i>
       <span>Categories</span> <span class="label label-important">2</span></a>
       <ul>
-        <li><a href="{{url('/admin/add-category')}}"><i class="icon icon-plus-sign"></i>Add Category</a></li>
-        <li><a href="{{url('/admin/view-category')}}"><i class="icon icon-eye-open"></i>View categories</a></li>
+        <li><a href="{{url('/admin/add-category')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Category</a></li>
+        <li><a href="{{url('/admin/view-category')}}"><i class="icon icon-eye-open icon-2x"></i>View categories</a></li>
         
       </ul>
     </li>
-    <li><a href="buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
-    <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
-    <li class="submenu"> <a href="#"><i class="icon icon-cog"></i> <span>Settings</span> <span class="label label-important">1</span></a>
+    
+        <!-- permissions -->
+    <li class="submenu"> <a href="#"><i class="icon icon-key icon-2x"></i> <span>Permissions</span>
+      <span class="label label-important">2</span></a>
       <ul>
-        <li><a href="{{url('/admin/settings')}}"><i class="icon icon-edit"></i>Update password</a></li>
-        
-       
+        <li><a href="{{url('/admin.add-permission')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Permission</a></li>
+        <li><a href="{{url('/admin.view-permissions')}}"><i class="icon icon-eye-open icon-2x"></i>View Permissions</a></li>
       </ul>
     </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span>
-      <span class="label label-important">4</span></a>
+
+      <!-- Roles -->
+    <li class="submenu"> <a href="#"><i class="icon icon-random icon-2x"></i> <span>Roles</span>
+      <span class="label label-important">2</span></a>
       <ul>
-        <li><a href="error403.html">Error 403</a></li>
-        <li><a href="error404.html">Error 404</a></li>
-        <li><a href="error405.html">Error 405</a></li>
-        <li><a href="error500.html">Error 500</a></li>
+        <li><a href="{{url('/admin.add-role')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Role</a></li>
+        <li><a href="{{url('/admin.view-roles')}}"><i class="icon icon-eye-open icon-2x"></i>View Roles</a></li>
       </ul>
     </li>
-    <li><a href="{{url('/logout')}}"><i class="icon icon-off"></i> <span>Logout</span></a></li>
+
+      <!-- settings -->
+      <li class="submenu"> <a href="#"><i class="icon icon-cog icon-2x"></i> <span>Settings</span> <span class="label label-important">1</span></a>
+        <ul>
+          <li><a href="{{url('/admin/settings')}}"><i class="icon icon-edit icon-2x"></i>Update password</a></li>       
+        </ul>
+      </li>
+
+    <li><a href="{{url('/logout')}}"><i class="icon icon-off icon-2x"></i> <span>Logout</span></a></li>
   </ul>
 </div>
 <!--sidebar-menu-->
