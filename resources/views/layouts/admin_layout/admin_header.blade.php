@@ -1,7 +1,11 @@
 <!--Header-part-->
+
 <div id="header">
   <h1><a href="/admin/dashboard">Tracker Panel</a></h1>
 </div>
+ <!-- Content Header (Page header) -->
+
+
 <!--close-Header-part-->
 
 {{-- 

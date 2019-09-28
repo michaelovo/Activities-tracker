@@ -26,8 +26,8 @@
     <li class="submenu"> <a href="#"><i class="icon icon-key icon-2x"></i> <span>Permissions</span>
       <span class="label label-important">2</span></a>
       <ul>
-        <li><a href="{{url('/admin.add-permission')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Permission</a></li>
-        <li><a href="{{url('/admin.view-permissions')}}"><i class="icon icon-eye-open icon-2x"></i>View Permissions</a></li>
+        <li><a href="{{url('/admin/permission')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Permission</a></li>
+        <li><a href="{{url('/admin/view-permissions')}}"><i class="icon icon-eye-open icon-2x"></i>View Permissions</a></li>
       </ul>
     </li>
 
