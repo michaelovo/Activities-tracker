@@ -35,8 +35,8 @@
     <li class="submenu"> <a href="#"><i class="icon icon-random icon-2x"></i> <span>Roles</span>
       <span class="label label-important">2</span></a>
       <ul>
-        <li><a href="{{url('/admin.add-role')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Role</a></li>
-        <li><a href="{{url('/admin.view-roles')}}"><i class="icon icon-eye-open icon-2x"></i>View Roles</a></li>
+        <li><a href="{{url('/admin/role')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Role</a></li>
+        <li><a href="{{url('/admin/view-roles')}}"><i class="icon icon-eye-open icon-2x"></i>View Roles</a></li>
       </ul>
     </li>
 

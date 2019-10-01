@@ -44,10 +44,10 @@ Route::group(['prefix'=> 'admin','middleware'=>['auth']],function(){
  // Roles route
  Route::get('/role','RolesController@index');//->middleware('permission:Create role');// Create role page
  Route::post('/create-role','RolesController@createRole');//Create role function
- Route::get('/view-roles','RolesController@viewRoles')->middleware('permission:View roles|Create role');// view roles
- Route::get('/edit-role/{id}','RolesController@editRole')->middleware('permission:Edit role');// edit role
+ Route::get('/view-roles','RolesController@viewRoles');//->middleware('permission:View roles|Create role');// view roles
+ Route::get('/edit-role/{id}','RolesController@editRole');//->middleware('permission:Edit role');// edit role
  Route::post('/update-role/{id}','RolesController@updateRole')->name('role.update');// update role
- Route::get('/delete-role/{id}','RolesController@deleteRole')->middleware('permission:Delete role');//delete role
+ Route::get('/delete-role/{id}','RolesController@deleteRole');//->middleware('permission:Delete role');//delete role
 
 
 

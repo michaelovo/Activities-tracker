@@ -20,34 +20,46 @@
             </div>
             <div class="widget-content nopadding">
 
-              <form class="form-horizontal" method="post" action="{{url('/admin/edit-category/'.$categoryDetails->id)}}" name="edit_category" id="edit_category" novalidate="novalidate">
-              	  {{csrf_field()}}
-
-              <div class="control-group">
-                <label class="control-label">Category Name</label>
-                <div class="controls">
-                  <input type="text" name="category_name" id="category_name" value="{{$categoryDetails->name}}">
+             <!--/form-->                            
+              {{ Form::model($role, array('route' => array('role.update', $role->id), 'method' => 'Post','class'=>"form-horizontal")) }}
+                {{csrf_field()}}
+  
+                <div class="control-group">
+                  <label class="control-label">Name</label>
+                  <div class="controls">
+                      <input id="name" name="name" type="text" class="form-control" value="{{$role->name}}">
+                  </div>
                 </div>
-              </div>
 
-              <div class="control-group">
-                <label class="control-label">Description</label>
-                <div class="controls">
-                  <textarea name="description" id="description">{{$categoryDetails->description}}</textarea> 
+                <div class="control-group">
+                  <label class="control-label">Description</label>
+                  <div class="controls">
+                    <textarea name="description" id="description">{{$role->description}}</textarea> 
+                  </div>
                 </div>
-              </div>
 
                          
-              <div class="control-group">
-                <label class="control-label">URL</label>
-                <div class="controls">
-                  <input type="text" name="url" id="url" value="{{$categoryDetails->url}}">
+                <div class="control-group">
+                  <label class="control-label"></label>
+                  <div class="controls">
+                      <ul style="-moz-column-count: 4;-moz-column-gap: 20px;-webkit-column-count: 4; -webkit-column-gap: 20px;   column-count: 4;column-gap: 20px ;">
+                          <input style="width:16px;height:16px;" type="checkbox" id="select-all"/><strong>All permissions</strong></br>
+                          @foreach ($permissions as $permission)
+                            {{Form::checkbox('permissions[]',  $permission->id, $role->permissions ) }}
+                            {{Form::label($permission->name, ucfirst($permission->name)) }}<br>
+          
+                          @endforeach
+                        </ul>               
+                    </div>
                 </div>
-              </div>
 
-              <div class="form-actions">
-                <input type="submit" value="Update Category" class="btn btn-success">
-              </div>
+                
+                <div class="form-actions"><!--footer -->
+                  {{ Form::submit('Update', array('class' => 'btn btn-primary')) }}
+                  <!--button type="submit" class="btn btn-primary">Update</button-->
+                </div><!--//footer -->
+              {{ Form::close() }}
+              <!--/form-->
 
             </form>
             </div>
