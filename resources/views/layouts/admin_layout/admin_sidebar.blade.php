@@ -11,17 +11,18 @@
           <li><a href="{{url('/admin.view-users')}}"><i class="icon icon-eye-open icon-2x"></i>View Users</a></li>
         </ul>
       </li>
-   
+
       <!-- Categories -->
     <li class="submenu"> <a href="#"><i class="icon icon-th-list icon-2x"></i>
-      <span>Categories</span> <span class="label label-important">2</span></a>
+      <span>Categories</span> <span class="label label-important">3</span></a>
       <ul>
         <li><a href="{{url('/admin/add-category')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Category</a></li>
         <li><a href="{{url('/admin/view-category')}}"><i class="icon icon-eye-open icon-2x"></i>View categories</a></li>
-        
+        <li><a href="{{url('admin/categories/bin')}}"><i class="icon icon-trash icon-2x"></i>Recycle Bin</a></li>
+
       </ul>
     </li>
-    
+
         <!-- permissions -->
     <li class="submenu"> <a href="#"><i class="icon icon-key icon-2x"></i> <span>Permissions</span>
       <span class="label label-important">2</span></a>
@@ -43,7 +44,7 @@
       <!-- settings -->
       <li class="submenu"> <a href="#"><i class="icon icon-cog icon-2x"></i> <span>Settings</span> <span class="label label-important">1</span></a>
         <ul>
-          <li><a href="{{url('/admin/settings')}}"><i class="icon icon-edit icon-2x"></i>Update password</a></li>       
+          <li><a href="{{url('/admin/settings')}}"><i class="icon icon-edit icon-2x"></i>Update password</a></li>
         </ul>
       </li>
 

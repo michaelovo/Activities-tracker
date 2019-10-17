@@ -18,9 +18,9 @@ class CategoryController extends Controller
         	$category->description = $data['description'];
         	$category->url = $data['url'];
         	$category->save();
-        	 return redirect('/admin/view-category')->with('flash_categoryadd_success_msg','New category Added successfully!');       	
+        	 return redirect('/admin/view-category')->with('flash_success_msg','New category Added successfully!');
     	}
-    	
+
     	return view('admin.categories.add_category');
     }
 
@@ -38,7 +38,7 @@ class CategoryController extends Controller
             //echo "<pre>"; print_r($data); die;
             Category::where(['id'=>$id])->update(['name'=>$data['category_name'],'description'=>$data['description'],'url'=>$data['url']]);
 
-            return redirect('/admin/view-category')->with('flash_categoryadd_success_msg','Category Updated successfully!');
+            return redirect('/admin/view-category')->with('flash_success_msg','Category Updated successfully!');
         }
         // end of update category
 
@@ -47,15 +47,29 @@ class CategoryController extends Controller
             return view('admin.categories.edit_category')->with(compact('categoryDetails'));
         }
 
-        //FUNCTION TO DELETE CATEGORY
+        //FUNCTION TO SOFTDELETE CATEGORY
         public function deleteCategory(Request $request, $id=null){
             if(!empty($id)){
                 Category::where(['id'=>$id])->delete();
-            return redirect()->back()->with('flash_categoryadd_success_msg','Category Deleted successfully!');
+            return redirect()->back()->with('flash_success_msg','Category Deleted successfully!');
             }
-
         }
-       
-       
+
+        public function deleteCategoryPermanently(Request $request, $id=null) {
+          Category::withTrashed()->whereId($id)->forceDelete();
+          return redirect()->back()->with('flash_success_msg','Operation successfully!');
+      	}
+
+        public function recycleBin() {
+          $bins       = Category::onlyTrashed()->latest()->get();
+      		$page_title = 'Recycle bin';
+      		return view('admin.categories.recycle_bin')->with(compact('bins', 'page_title'));
+      	}
+
+        public function restoreCategory(Request $request, $id=null) {
+          Category::withTrashed()->whereId($id)->restore();
+          return redirect()->back()->with('flash_success_msg','Restored successfully!');
+      	}
+
+
 }
- 

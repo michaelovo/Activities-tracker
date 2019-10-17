@@ -2,11 +2,9 @@
 @section('content')
 
 
-
 <div id="content">
   <div id="content-header">
       @include('layouts.admin_layout.page_title')
-
   </div>
   <div class="container-fluid"><hr>
         @include('includes.msg')
@@ -28,7 +26,7 @@
                       <div class="control-group">
                           <label class="control-label">Description</label>
                           <div class="controls">
-                            <textarea name="description" value="{{ old('description') }}" id="description" placeholder="permission description..."></textarea> 
+                            <textarea name="description" value="{{ old('description') }}" id="description" placeholder="permission description..."></textarea>
                           </div>
                         </div>
                       </div>
@@ -49,7 +47,7 @@
                       </div>
                   </form>
                 </div>
-                
+
               </div>
             </div>
           </div>

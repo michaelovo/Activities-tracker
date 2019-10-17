@@ -49,6 +49,12 @@ Route::group(['prefix'=> 'admin','middleware'=>['auth']],function(){
  Route::post('/update-role/{id}','RolesController@updateRole')->name('role.update');// update role
  Route::get('/delete-role/{id}','RolesController@deleteRole');//->middleware('permission:Delete role');//delete role
 
+ //RECYCLE BIN
+ Route::get('/categories/bin','CategoryController@recycleBin');//->middleware('permission:Create role');// Create role page
+ Route::get('/restore-category/{id}','CategoryController@restoreCategory');//->middleware('permission:Delete role');//delete role
+ Route::get('/deletePermanently-category/{id}','CategoryController@deleteCategoryPermanently');//->middleware('permission:Delete role');//delete role
+
+
 
 
 });
