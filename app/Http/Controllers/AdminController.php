@@ -87,5 +87,11 @@ class AdminController extends Controller
       }
     }
     // Ends -- Update password
+
+    public function viewusers(){
+      $users = User::orderBy('name','ASC')->get();
+      $page_title ="Users";
+       return view('admin.view_users')->with(compact('users','page_title'));
+    }
     
 }

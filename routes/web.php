@@ -27,6 +27,8 @@ Route::group(['prefix'=> 'admin','middleware'=>['auth']],function(){
   Route::get('settings','AdminController@settings');
   Route::get('check-pwd','AdminController@checkPwd');
   Route::match(['get','post'],'/admin/update-pwd','AdminController@updatepassword');
+  Route::get('users','AdminController@viewusers');
+
 
   //Admin category route
   Route::match(['get','post'],'add-category','CategoryController@addCategory');
