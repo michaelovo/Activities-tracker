@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Category' => $baseDir . '/app/Category.php',
+    'App\\Console\\Commands\\AddCategory' => $baseDir . '/app/Console/Commands/AddCategory.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
@@ -1556,6 +1557,12 @@ return array(
     'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => $vendorDir . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
     'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => $vendorDir . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+    'Julienbourdeau\\RouteUsage\\Authorize' => $vendorDir . '/julienbourdeau/route-usage/src/Authorize.php',
+    'Julienbourdeau\\RouteUsage\\Console\\Commands\\UsageRouteCommand' => $vendorDir . '/julienbourdeau/route-usage/src/Console/Commands/UsageRouteCommand.php',
+    'Julienbourdeau\\RouteUsage\\Http\\Controllers\\RouteUsageController' => $vendorDir . '/julienbourdeau/route-usage/src/Http/Controllers/RouteUsageController.php',
+    'Julienbourdeau\\RouteUsage\\Listeners\\LogRouteUsage' => $vendorDir . '/julienbourdeau/route-usage/src/Listeners/LogRouteUsage.php',
+    'Julienbourdeau\\RouteUsage\\RouteUsage' => $vendorDir . '/julienbourdeau/route-usage/src/RouteUsage.php',
+    'Julienbourdeau\\RouteUsage\\RouteUsageServiceProvider' => $vendorDir . '/julienbourdeau/route-usage/src/RouteUsageServiceProvider.php',
     'Laravel\\Telescope\\AuthorizesRequests' => $vendorDir . '/laravel/telescope/src/AuthorizesRequests.php',
     'Laravel\\Telescope\\Console\\ClearCommand' => $vendorDir . '/laravel/telescope/src/Console/ClearCommand.php',
     'Laravel\\Telescope\\Console\\InstallCommand' => $vendorDir . '/laravel/telescope/src/Console/InstallCommand.php',

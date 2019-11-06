@@ -103,6 +103,7 @@ class ComposerStaticInitdaa362b701c0f5b64caa5c4365c9b462
         ),
         'J' => 
         array (
+            'Julienbourdeau\\RouteUsage\\' => 26,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -314,6 +315,10 @@ class ComposerStaticInitdaa362b701c0f5b64caa5c4365c9b462
         array (
             0 => __DIR__ . '/..' . '/laravel/telescope/src',
         ),
+        'Julienbourdeau\\RouteUsage\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/julienbourdeau/route-usage/src',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -403,6 +408,7 @@ class ComposerStaticInitdaa362b701c0f5b64caa5c4365c9b462
 
     public static $classMap = array (
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\Console\\Commands\\AddCategory' => __DIR__ . '/../..' . '/app/Console/Commands/AddCategory.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
@@ -1952,6 +1958,12 @@ class ComposerStaticInitdaa362b701c0f5b64caa5c4365c9b462
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Julienbourdeau\\RouteUsage\\Authorize' => __DIR__ . '/..' . '/julienbourdeau/route-usage/src/Authorize.php',
+        'Julienbourdeau\\RouteUsage\\Console\\Commands\\UsageRouteCommand' => __DIR__ . '/..' . '/julienbourdeau/route-usage/src/Console/Commands/UsageRouteCommand.php',
+        'Julienbourdeau\\RouteUsage\\Http\\Controllers\\RouteUsageController' => __DIR__ . '/..' . '/julienbourdeau/route-usage/src/Http/Controllers/RouteUsageController.php',
+        'Julienbourdeau\\RouteUsage\\Listeners\\LogRouteUsage' => __DIR__ . '/..' . '/julienbourdeau/route-usage/src/Listeners/LogRouteUsage.php',
+        'Julienbourdeau\\RouteUsage\\RouteUsage' => __DIR__ . '/..' . '/julienbourdeau/route-usage/src/RouteUsage.php',
+        'Julienbourdeau\\RouteUsage\\RouteUsageServiceProvider' => __DIR__ . '/..' . '/julienbourdeau/route-usage/src/RouteUsageServiceProvider.php',
         'Laravel\\Telescope\\AuthorizesRequests' => __DIR__ . '/..' . '/laravel/telescope/src/AuthorizesRequests.php',
         'Laravel\\Telescope\\Console\\ClearCommand' => __DIR__ . '/..' . '/laravel/telescope/src/Console/ClearCommand.php',
         'Laravel\\Telescope\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/telescope/src/Console/InstallCommand.php',

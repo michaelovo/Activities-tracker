@@ -48,6 +48,8 @@
         </ul>
       </li>
 
+      <li><a href="{{url('/route-usage')}}" target="_blank"><i class="icon icon-off icon-2x"></i> <span>Route Usage</span></a></li>
+
     <li><a href="{{url('/logout')}}"><i class="icon icon-off icon-2x"></i> <span>Logout</span></a></li>
   </ul>
 </div>

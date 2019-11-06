@@ -766,6 +766,65 @@
         "description": "Highlight PHP code in terminal"
     },
     {
+        "name": "julienbourdeau/route-usage",
+        "version": "0.3",
+        "version_normalized": "0.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/julienbourdeau/route-usage.git",
+            "reference": "b1e124654bf241311ca68a64ff435a245d8c1748"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/julienbourdeau/route-usage/zipball/b1e124654bf241311ca68a64ff435a245d8c1748",
+            "reference": "b1e124654bf241311ca68a64ff435a245d8c1748",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": ">= 5.8",
+            "php": "^7.1"
+        },
+        "require-dev": {
+            "orchestra/testbench": "3.8.*",
+            "phpunit/phpunit": "^7.0"
+        },
+        "time": "2019-10-29T19:47:16+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Julienbourdeau\\RouteUsage\\RouteUsageServiceProvider"
+                ],
+                "aliases": {
+                    "RouteUsage": "Julienbourdeau\\RouteUsage\\RouteUsageFacade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Julienbourdeau\\RouteUsage\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Julien Bourdeau",
+                "email": "julien@sigerr.org",
+                "role": "Developer"
+            }
+        ],
+        "description": "Log what routes were used and when. Easily figure out if one hasn't been called in a long time (and delete it! 🥳)",
+        "homepage": "https://github.com/julienbourdeau/route-usage",
+        "keywords": [
+            "julienbourdeau",
+            "route-usage"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "v5.8.35",
         "version_normalized": "5.8.35.0",

@@ -1,0 +1,54 @@
+{
+    "name": "julienbourdeau/route-usage",
+    "description": "Log what routes were used and when. Easily figure out if one hasn't been called in a long time (and delete it! 🥳)",
+    "keywords": [
+        "julienbourdeau",
+        "route-usage"
+    ],
+    "homepage": "https://github.com/julienbourdeau/route-usage",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Julien Bourdeau",
+            "email": "julien@sigerr.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "laravel/framework": ">= 5.8"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Julienbourdeau\\RouteUsage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Julienbourdeau\\RouteUsage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Julienbourdeau\\RouteUsage\\RouteUsageServiceProvider"
+            ],
+            "aliases": {
+                "RouteUsage": "Julienbourdeau\\RouteUsage\\RouteUsageFacade"
+            }
+        }
+    }
+}
