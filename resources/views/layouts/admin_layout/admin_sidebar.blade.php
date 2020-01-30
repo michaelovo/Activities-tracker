@@ -18,7 +18,6 @@
       <ul>
         <li><a href="{{url('/admin/add-category')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Category</a></li>
         <li><a href="{{url('/admin/view-category')}}"><i class="icon icon-eye-open icon-2x"></i>View categories</a></li>
-        <li><a href="{{url('admin/categories/bin')}}"><i class="icon icon-trash icon-2x"></i>Recycle Bin</a></li>
 
       </ul>
     </li>
@@ -41,14 +40,33 @@
       </ul>
     </li>
 
+     <!-- Json -->
+     <li class="submenu"> <a href="#"><i class="icon icon-random icon-2x"></i> <span>Json</span>
+      <span class="label label-important">2</span></a>
+      <ul>
+        {{--<li><a href="{{url('/admin/role')}}"><i class="icon icon-plus-sign icon-2x"></i>Add Role</a></li>--}}
+        <li><a href="{{url('/admin/json_view')}}"><i class="icon icon-eye-open icon-2x"></i>Json view</a></li>
+      </ul>
+    </li>
+
+
       <!-- settings -->
       <li class="submenu"> <a href="#"><i class="icon icon-cog icon-2x"></i> <span>Settings</span> <span class="label label-important">1</span></a>
         <ul>
           <li><a href="{{url('/admin/settings')}}"><i class="icon icon-edit icon-2x"></i>Update password</a></li>
         </ul>
       </li>
+       <!-- TRASH -->
+    <li class="submenu"> <a href="#"><i class="icon icon-trash icon-2x"></i> <span>Trash</span>
+      <span class="label label-important">2</span></a>
+      <ul>
+        <li><a href="{{url('admin/categories/bin')}}"><i class="icon icon-eye-open icon-2x"></i>Categories</a></li>
+      </ul>
+    </li>
 
-      <li><a href="{{url('/route-usage')}}" target="_blank"><i class="icon icon-off icon-2x"></i> <span>Route Usage</span></a></li>
+      <li><a href="{{url('/route-usage')}}" target="_blank"><i class="icon-double-angle-right icon-2x"></i> <span>Route Usage</span></a></li>
+      <li><a href="{{url('/telescope')}}" target="_blank"><i class="icon-stethoscope icon-2x"></i> <span>Telescope</span></a></li>
+
 
     <li><a href="{{url('/logout')}}"><i class="icon icon-off icon-2x"></i> <span>Logout</span></a></li>
   </ul>

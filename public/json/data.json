@@ -1,0 +1,26 @@
+[
+    {
+        "customers_name": "Ismaila Fatai",
+        "loan_type": "PAYROLL LENDING FEDERAL",
+        "loan_application_type": "NEW",
+        "LD": "LD2002297999, FT2002204596",
+        "booked_amount": "50000",
+        "disbursed_amount": "50000"
+    },
+    {
+        "customers_name": "Koledafe Adekunle Kehinde",
+        "loan_type": "PAYROLL LENDING FEDERAL",
+        "loan_application_type": "NEW",
+        "LD": "LD2002262104 , FT2002230990",
+        "booked_amount": "120000",
+        "disbursed_amount": "120000"
+    },
+    {
+        "customers_name": "Afolabi Modinat Bolanle",
+        "loan_type": "PAYROLL LENDING STATE",
+        "loan_application_type": "NEW",
+        "LD": "LD2002258877 , FT2002259220",
+        "booked_amount": "270000",
+        "disbursed_amount": "270000"
+    }
+]

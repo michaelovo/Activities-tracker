@@ -91,4 +91,13 @@ class RolesController extends Controller {
 		Role::where(['id' => $id])->delete();
 		return back()->with('flash_success_msg', 'Role Deleted successfully!');
 	}
+
+	// read, loop through and display contents of json file
+	public function jsonView(){
+		$page_title = 'Customers detail';
+		$url = 'json/data.json'; // path to your JSON file
+		$data = file_get_contents($url); // put the contents of the file into a variable
+		$customers = json_decode($data); // decode the JSON feed
+		return view('admin.json.json_view')->with(compact('customers','page_title'));
+	}
 }

@@ -50,6 +50,8 @@ Route::group(['prefix'=> 'admin','middleware'=>['auth']],function(){
  Route::get('/edit-role/{id}','RolesController@editRole');//->middleware('permission:Edit role');// edit role
  Route::post('/update-role/{id}','RolesController@updateRole')->name('role.update');// update role
  Route::get('/delete-role/{id}','RolesController@deleteRole');//->middleware('permission:Delete role');//delete role
+ Route::get('/json_view','RolesController@jsonView');// json file viewer
+
 
  //RECYCLE BIN
  Route::get('/categories/bin','CategoryController@recycleBin');//->middleware('permission:Create role');// Create role page
