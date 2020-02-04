@@ -15,6 +15,8 @@
        
        <div class="widget-box">
          @include('includes.msg')
+         @include('includes.numFormatter')
+
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Data table</h5>
           </div>
@@ -41,7 +43,7 @@
                   <td>{{$user->loan_type}}</td>
                   <td>{{$user->loan_application_type}}</td>
                   <td>{{$user->LD}}</td>
-                  <td>{{$user->booked_amount}}</td>
+                  <td>{{formatWithSuffix($user->booked_amount)}}</td>
                   <td>{{$user->disbursed_amount}}</td>
                   {{--<td class="center">
                     <div class="fl">
