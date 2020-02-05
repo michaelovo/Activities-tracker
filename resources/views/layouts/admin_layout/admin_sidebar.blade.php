@@ -7,8 +7,8 @@
       <li class="submenu"> <a href="#"><i class="icon icon-group icon-2x"></i> <span>Users</span>
         <span class="label label-important">2</span></a>
         <ul>
-          <li><a href="{{url('/admin.add-user')}}"><i class="icon icon-plus-sign icon-2x"></i>Add User</a></li>
-          <li><a href="{{url('/admin/users')}}"><i class="icon icon-eye-open icon-2x"></i>View Users</a></li>
+          <li><a href="{{url('/admin/create/users')}}"><i class="icon icon-plus-sign icon-2x"></i>Add User</a></li>
+          <li><a href="{{url('/admin/view/users')}}"><i class="icon icon-eye-open icon-2x"></i>View Users</a></li>
         </ul>
       </li>
 

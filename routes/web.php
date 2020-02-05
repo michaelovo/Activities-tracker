@@ -27,7 +27,13 @@ Route::group(['prefix'=> 'admin','middleware'=>['auth']],function(){
   Route::get('settings','AdminController@settings');
   Route::get('check-pwd','AdminController@checkPwd');
   Route::match(['get','post'],'/admin/update-pwd','AdminController@updatepassword');
-  Route::get('users','AdminController@viewusers');
+
+  Route::get('view/users','AdminController@viewusers');
+  Route::post('add/user','AdminController@addUser');
+  Route::get('create/users', 'AdminController@index');
+  Route::post('import/users', 'AdminController@import');//;//->name('import');
+  Route::get('export', 'AdminController@export');//->name('export');
+
 
 
   //Admin category route

@@ -16,40 +16,51 @@
         <div class="span12">
           <div class="widget-box">
             <div class="widget-title"> <span class="icon"> <i class="icon-info-sign"></i> </span>
-              <h5>Add Permission</h5>
+              <h5>Add Users</h5>
             </div>
             <div class="widget-content nopadding">
 
-              <form class="form-horizontal" method="post" action="{{url('/admin/create-permission')}}" name="create_permission" id="create_permission">
+            <form class="form-horizontal" method="post" action="{{url('/admin/add/user')}}" name="create_user" id="create_user">
               	  {{csrf_field()}}
                   <div class="col-md-6">
                     <div class="control-group">
-                      <label class="control-label">Permission Name</label>
+                      <label class="control-label">User Name</label>
                       <div class="controls">
-                        <input id ="name" value="{{ old('name') }}" name="name" type="text" placeholder="Permission name ..." required>
+                        <input id ="name" value="{{ old('name') }}" name="name" type="text" placeholder="user name" required>
                       </div>
                     </div>
-
                                            
                     <div class="control-group">
-                      <label class="control-label">Display name</label>
+                      <label class="control-label">Email</label>
                       <div class="controls">
-                        <input id="display_name" value="{{ old('display_name') }}" name="display_name" type="text" placeholder="Permission display name ..."required>
+                        <input id="email" value="{{ old('email') }}" name="email" type="text" placeholder="email ..."required>
                       </div>
                     </div>
 
                     <div class="control-group">
-                      <label class="control-label">Description</label>
+                      <label class="control-label">Password</label>
                       <div class="controls">
-                        <textarea name="description" value="{{ old('description') }}" id="description" placeholder="permission description..."></textarea> 
+                        <input id="password" value="{{ old('password') }}" name="password" type="password" placeholder="password ..."required>
                       </div>
                     </div>
                   </div>
                   
-                <div class="form-actions">
-                  <input type="submit" value="Create Permission" class="btn btn-success">
+                <div class="form-actions" align="center">
+                  <input type="submit" value="Create" class="btn btn-success">
                 </div>
             </form>
+            
+            {{-- Import excel file for user---}}
+            <form action="{{ url('/admin/import/users') }}" method="POST" name="importform"
+               enctype="multipart/form-data">
+               {{csrf_field()}}
+                <input type="file" name="file" class="form-control" required/>
+                <br>
+                <div>
+                  <button class="btn btn-primary">Import Users</button>
+                </div>
+            </form>
+
             </div>
           </div>
         </div>

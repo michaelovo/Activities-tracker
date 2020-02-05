@@ -6,6 +6,9 @@ use Auth;
 use Session;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Exports\UsersExport;
+use App\Imports\UsersImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -93,5 +96,45 @@ class AdminController extends Controller
       $page_title ="Users";
        return view('admin.view_users')->with(compact('users','page_title'));
     }
+
+    public function addUser(Request $request) {
+
+      $this->validate($request,[
+        'name'=>'required',
+        'email'=>'required|unique:users',
+        'password'=>'required'
+
+      ]);
+
+      $user = new User;
+      $user->name = $data['name'];
+      $user->email = $data['email'];
+      $user->password = \Crypt::encrypt($data['password']);
+      $page_title='Create Users';
+
+      // prevent duplicate
+      $emailCount = User::where('email',$request->email)->count();
+      if($emailCount >0){
+          return redirect()->back()->with('flash_err_msg','Email Already Exists!');
+      }
+      else{
+          $user->save();
+          return back()->with('flash_success_msg','User Added successfully!');
+      }
+        return view('admin.create_users');
+    }
     
+    public function export() {
+        return Excel::download(new UsersExport, 'users.xlsx');
+    }
+    
+    public function import(){
+        Excel::import(new UsersImport,request()->file('file'));
+        return back()->with('flash_success_msg', 'Operation successfully!');
+    }
+
+    public function index(){
+      $page_title='Create Users';
+      return view('admin.create_users')->with(compact('page_title'));
+    }
 }

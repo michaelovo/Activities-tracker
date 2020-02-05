@@ -15,6 +15,9 @@
        
        <div class="widget-box">
          @include('includes.msg')
+         <div><a class="btn btn-info" href="{{ url('admin/export') }}"> 
+          Download Excel file</a>
+         
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Data table</h5>
           </div>
