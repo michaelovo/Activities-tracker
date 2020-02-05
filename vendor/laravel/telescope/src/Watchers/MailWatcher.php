@@ -2,9 +2,9 @@
 
 namespace Laravel\Telescope\Watchers;
 
-use Illuminate\Mail\Events\MessageSent;
-use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Telescope;
+use Laravel\Telescope\IncomingEntry;
+use Illuminate\Mail\Events\MessageSent;
 
 class MailWatcher extends Watcher
 {

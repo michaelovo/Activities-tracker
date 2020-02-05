@@ -2,9 +2,9 @@
 
 namespace Laravel\Telescope\Watchers;
 
-use Illuminate\Database\Events\QueryExecuted;
-use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Telescope;
+use Laravel\Telescope\IncomingEntry;
+use Illuminate\Database\Events\QueryExecuted;
 
 class QueryWatcher extends Watcher
 {
@@ -45,8 +45,7 @@ class QueryWatcher extends Watcher
             'slow' => isset($this->options['slow']) && $time >= $this->options['slow'],
             'file' => $caller['file'],
             'line' => $caller['line'],
-            'hash' => $this->familyHash($event),
-        ])->tags($this->tags($event)));
+        ])->tags($this->tags($event))->withFamilyHash($this->familyHash($event)));
     }
 
     /**
@@ -97,9 +96,7 @@ class QueryWatcher extends Watcher
                 ? "/\?(?=(?:[^'\\\']*'[^'\\\']*')*[^'\\\']*$)/"
                 : "/:{$key}(?=(?:[^'\\\']*'[^'\\\']*')*[^'\\\']*$)/";
 
-            if ($binding === null) {
-                $binding = 'null';
-            } elseif (! is_int($binding) && ! is_float($binding)) {
+            if (! is_int($binding) && ! is_float($binding)) {
                 $binding = $event->connection->getPdo()->quote($binding);
             }
 

@@ -1,15 +1,15 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateTelescopeEntriesTable extends Migration
 {
     /**
      * The database schema.
      *
-     * @var \Illuminate\Database\Schema\Builder
+     * @var Schema
      */
     protected $schema;
 
@@ -20,17 +20,9 @@ class CreateTelescopeEntriesTable extends Migration
      */
     public function __construct()
     {
-        $this->schema = Schema::connection($this->getConnection());
-    }
-
-    /**
-     * Get the migration connection name.
-     *
-     * @return string|null
-     */
-    public function getConnection()
-    {
-        return config('telescope.storage.database.connection');
+        $this->schema = Schema::connection(
+            config('telescope.storage.database.connection')
+        );
     }
 
     /**

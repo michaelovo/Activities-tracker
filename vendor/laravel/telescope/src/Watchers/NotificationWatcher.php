@@ -2,14 +2,14 @@
 
 namespace Laravel\Telescope\Watchers;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\AnonymousNotifiable;
-use Illuminate\Notifications\Events\NotificationSent;
+use Laravel\Telescope\Telescope;
 use Laravel\Telescope\ExtractTags;
 use Laravel\Telescope\FormatModel;
 use Laravel\Telescope\IncomingEntry;
-use Laravel\Telescope\Telescope;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\AnonymousNotifiable;
+use Illuminate\Notifications\Events\NotificationSent;
 
 class NotificationWatcher extends Watcher
 {
@@ -69,11 +69,7 @@ class NotificationWatcher extends Watcher
         if ($notifiable instanceof Model) {
             return FormatModel::given($notifiable);
         } elseif ($notifiable instanceof AnonymousNotifiable) {
-            $routes = array_map(function ($route) {
-                return is_array($route) ? implode(',', $route) : $route;
-            }, $notifiable->routes);
-
-            return 'Anonymous:'.implode(',', $routes);
+            return 'Anonymous:'.implode(',', $notifiable->routes);
         }
 
         return get_class($notifiable);

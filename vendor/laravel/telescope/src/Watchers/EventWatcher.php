@@ -2,19 +2,18 @@
 
 namespace Laravel\Telescope\Watchers;
 
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Closure;
+use ReflectionFunction;
 use Illuminate\Support\Str;
-use Laravel\Telescope\ExtractProperties;
+use Laravel\Telescope\Telescope;
 use Laravel\Telescope\ExtractTags;
 use Laravel\Telescope\IncomingEntry;
-use Laravel\Telescope\Telescope;
-use ReflectionFunction;
+use Laravel\Telescope\ExtractProperties;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class EventWatcher extends Watcher
 {
-    use FormatsClosure;
-
     /**
      * Register the watcher.
      *
@@ -107,6 +106,25 @@ class EventWatcher extends Watcher
     }
 
     /**
+     * Format a closure-based listener.
+     *
+     * @param  \Closure  $listener
+     * @return string
+     *
+     * @throws \ReflectionException
+     */
+    protected function formatClosureListener(Closure $listener)
+    {
+        $listener = new ReflectionFunction($listener);
+
+        return sprintf('Closure at %s[%s:%s]',
+            $listener->getFileName(),
+            $listener->getStartLine(),
+            $listener->getEndLine()
+        );
+    }
+
+    /**
      * Determine if the event should be ignored.
      *
      * @param  string  $eventName
@@ -114,8 +132,8 @@ class EventWatcher extends Watcher
      */
     protected function shouldIgnore($eventName)
     {
-        return $this->eventIsIgnored($eventName) ||
-            (Telescope::$ignoreFrameworkEvents && $this->eventIsFiredByTheFramework($eventName));
+        return Telescope::$ignoreFrameworkEvents &&
+               $this->eventIsFiredByTheFramework($eventName);
     }
 
     /**
@@ -130,16 +148,5 @@ class EventWatcher extends Watcher
             ['Illuminate\*', 'eloquent*', 'bootstrapped*', 'bootstrapping*', 'creating*', 'composing*'],
             $eventName
         );
-    }
-
-    /**
-     * Determine if the event is ignored manually.
-     *
-     * @param  string  $eventName
-     * @return bool
-     */
-    protected function eventIsIgnored($eventName)
-    {
-        return Str::is($this->options['ignore'] ?? [], $eventName);
     }
 }

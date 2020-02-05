@@ -2,12 +2,12 @@
 
 namespace Laravel\Telescope\Watchers;
 
-use Illuminate\Console\Events\CommandStarting;
-use Illuminate\Console\Scheduling\CallbackEvent;
+use Laravel\Telescope\Telescope;
+use Laravel\Telescope\IncomingEntry;
 use Illuminate\Console\Scheduling\Event;
 use Illuminate\Console\Scheduling\Schedule;
-use Laravel\Telescope\IncomingEntry;
-use Laravel\Telescope\Telescope;
+use Illuminate\Console\Events\CommandStarting;
+use Illuminate\Console\Scheduling\CallbackEvent;
 
 class ScheduleWatcher extends Watcher
 {

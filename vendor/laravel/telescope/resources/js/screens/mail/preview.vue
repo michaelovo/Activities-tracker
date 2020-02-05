@@ -85,9 +85,7 @@
         </template>
 
         <div slot="after-attributes-card" slot-scope="slotProps" class="mt-5">
-            <div class="card">
-              <iframe :src="Telescope.basePath + '/telescope-api/mail/'+$route.params.id+'/preview'" width="100%" height="400"></iframe>
-          </div>
+            <iframe :src="Telescope.basePath + '/telescope-api/mail/'+$route.params.id+'/preview'" width="100%" height="400"></iframe>
         </div>
     </preview-screen>
 </template>
